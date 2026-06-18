@@ -15,11 +15,16 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
 
-        //Making individual middlewares can be used one at a time
+        //Making global middlewares they will pass in every file
+
+        /*
         $middleware->append(AgeCheck::class);
         $middleware->append(CountryCheck::class);
+        
+        
         //Grouped named middleware named MiddlewareMultiGroup
         $middleware->appendToGroup('MiddlewareMultiGroup', [AgeCheck::class, CountryCheck::class]);
+        */
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

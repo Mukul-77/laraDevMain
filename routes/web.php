@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use App\Http\Middleware\TestMiddleware;
+use App\Http\Controllers\UserControllerNew;
 
 Route::post('/addUser', [UserController::class, 'addUser'])->name('user.add');
-
+/*
 
 //Route::post('/getformData', [UserController::class, 'getFormData'])->name('user.addData');
 
@@ -33,3 +34,11 @@ Route::middleware('MiddlewareMultiGroup')->group(function(){
     Route::view('/userForm', 'user-form');
     Route::view('/','welcome');
 });
+
+Route::view('/testing','testFile')->middleware(TestMiddleware::class);
+
+*/
+
+//----- After UserControllerNew---
+
+Route::get('/users', [UserControllerNew::class, 'users']);
