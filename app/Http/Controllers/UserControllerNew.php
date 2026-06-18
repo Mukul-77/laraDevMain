@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+class UserControllerNew extends Controller
+{
+    public function users(){
+        return DB::select('select * from users');
+    }
+}
